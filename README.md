@@ -2,6 +2,10 @@
 
 Project 1
 
+**Họ và tên: Nguyễn Trung Nam**
+
+**MSV: 1621050197**
+
 ## Animate a widget across screens
 
 ```flutter
