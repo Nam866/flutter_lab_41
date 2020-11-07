@@ -8,7 +8,7 @@ class Todo {
   Todo(this.title, this.description);
 }
 
-void main() {
+void sendData() {
   runApp(MaterialApp(
     title: 'Passing Data',
     home: TodosScreen(
