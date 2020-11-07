@@ -71,7 +71,7 @@ class DetailScreen extends StatelessWidget {
 
 *** Kết quả: ***
 
-![alt](/picture/B1.png)
+![alt](/picture/B1.PNG)
 
 
 
@@ -134,7 +134,7 @@ class SecondRoute extends StatelessWidget {
 
 *** Kết quả: ***
 
-![alt](/picture/B2.png)
+![alt](/picture/B2.PNG)
 
 ## Navigate with named routes
 
@@ -204,7 +204,7 @@ class SecondScreen extends StatelessWidget {
 
 *** Kết quả: ***
 
-![alt](/picture/B3.png)
+![alt](/picture/B3.PNG)
 
 ## Pass arguments to a named route
 
@@ -374,7 +374,7 @@ class ScreenArguments {
 
 *** Kết quả: ***
 
-![alt](/picture/B4.png)
+![alt](/picture/B4.PNG)
 
 ## Return data from a screen
 
@@ -475,7 +475,7 @@ class SelectionScreen extends StatelessWidget {
 
 *** Kết quả: ***
 
-![alt](/picture/B5.png)
+![alt](/picture/B5.PNG)
 
 ## Send data to a new screen
 
@@ -567,7 +567,7 @@ class DetailScreen extends StatelessWidget {
 
 *** Kết quả: ***
 
-![alt](/picture/B6.png)
+![alt](/picture/B6.PNG)
 
 This project is a starting point for a Flutter application.
 
