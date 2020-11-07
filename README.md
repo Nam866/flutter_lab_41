@@ -69,7 +69,7 @@ class DetailScreen extends StatelessWidget {
 
 ```
 
-*** Kết quả: ***
+***Kết quả:***
 
 ![alt](/picture/B1.PNG)
 
@@ -132,7 +132,7 @@ class SecondRoute extends StatelessWidget {
 
 ```
 
-*** Kết quả: ***
+***Kết quả:***
 
 ![alt](/picture/B2.PNG)
 
@@ -202,7 +202,7 @@ class SecondScreen extends StatelessWidget {
 
 ```
 
-*** Kết quả: ***
+***Kết quả:***
 
 ![alt](/picture/B3.PNG)
 
@@ -372,7 +372,7 @@ class ScreenArguments {
 
 ```
 
-*** Kết quả: ***
+***Kết quả:***
 
 ![alt](/picture/B4.PNG)
 
@@ -473,7 +473,7 @@ class SelectionScreen extends StatelessWidget {
 
 ```
 
-*** Kết quả: ***
+***Kết quả:***
 
 ![alt](/picture/B5.PNG)
 
@@ -565,7 +565,7 @@ class DetailScreen extends StatelessWidget {
 
 ```
 
-*** Kết quả: ***
+***Kết quả:***
 
 ![alt](/picture/B6.PNG)
 
