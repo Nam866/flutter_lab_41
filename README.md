@@ -8,7 +8,7 @@ Project 1
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(HeroApp());
+void animate() => runApp(HeroApp());
 
 class HeroApp extends StatelessWidget {
   @override
@@ -66,7 +66,13 @@ class DetailScreen extends StatelessWidget {
 }
 
 
+
 ```
+
+***Kết quả: ****
+
+![alt](/picture/B1.png)
+
 
 
 ## Navigate to a new screen and back
@@ -76,7 +82,7 @@ class DetailScreen extends StatelessWidget {
 
 import 'package:flutter/material.dart';
 
-void main() {
+void navigateNew() {
   runApp(MaterialApp(
     title: 'Navigation Basics',
     home: FirstRoute(),
@@ -91,7 +97,7 @@ class FirstRoute extends StatelessWidget {
         title: Text('First Route'),
       ),
       body: Center(
-        child: ElevatedButton(
+        child: FlatButton(
           child: Text('Open route'),
           onPressed: () {
             Navigator.push(
@@ -113,7 +119,7 @@ class SecondRoute extends StatelessWidget {
         title: Text("Second Route"),
       ),
       body: Center(
-        child: ElevatedButton(
+        child: FlatButton(
           onPressed: () {
             Navigator.pop(context);
           },
@@ -123,14 +129,19 @@ class SecondRoute extends StatelessWidget {
     );
   }
 }
+
 ```
+
+***Kết quả: ****
+
+![alt](/picture/B2.png)
 
 ## Navigate with named routes
 
 ```flutter
 import 'package:flutter/material.dart';
 
-void main() {
+void navigateNamed() {
   runApp(MaterialApp(
     title: 'Named Routes Demo',
     // Start the app with the "/" named route. In this case, the app starts
@@ -153,7 +164,8 @@ class FirstScreen extends StatelessWidget {
         title: Text('First Screen'),
       ),
       body: Center(
-        child: ElevatedButton(
+        child: FlatButton(
+          color: Colors.yellow,
           child: Text('Launch screen'),
           onPressed: () {
             // Navigate to the second screen using a named route.
@@ -173,7 +185,8 @@ class SecondScreen extends StatelessWidget {
         title: Text("Second Screen"),
       ),
       body: Center(
-        child: ElevatedButton(
+        child: FlatButton(
+          color: Colors.yellow,
           onPressed: () {
             // Navigate back to the first screen by popping the current route
             // off the stack.
@@ -186,14 +199,19 @@ class SecondScreen extends StatelessWidget {
   }
 }
 
+
 ```
+
+***Kết quả: ****
+
+![alt](/picture/B3.png)
 
 ## Pass arguments to a named route
 
 ```flutter
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void passNamed() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -248,7 +266,8 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             // A button that navigates to a named route that. The named route
             // extracts the arguments by itself.
-            ElevatedButton(
+            FlatButton(
+              color: Colors.yellow,
               child: Text("Navigate to screen that extracts arguments"),
               onPressed: () {
                 // When the user taps the button, navigate to a named route
@@ -266,7 +285,8 @@ class HomeScreen extends StatelessWidget {
             // A button that navigates to a named route. For this route, extract
             // the arguments in the onGenerateRoute function and pass them
             // to the screen.
-            ElevatedButton(
+            FlatButton(
+              color: Colors.yellow,
               child: Text("Navigate to a named that accepts arguments"),
               onPressed: () {
                 // When the user taps the button, navigate to a named route
@@ -349,14 +369,19 @@ class ScreenArguments {
   ScreenArguments(this.title, this.message);
 }
 
+
 ```
+
+***Kết quả: ****
+
+![alt](/picture/B4.png)
 
 ## Return data from a screen
 
 ```flutter
 import 'package:flutter/material.dart';
 
-void main() {
+void returnData() {
   runApp(MaterialApp(
     title: 'Returning Data',
     home: HomeScreen(),
@@ -378,7 +403,8 @@ class HomeScreen extends StatelessWidget {
 class SelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return FlatButton(
+      color: Colors.brown,
       onPressed: () {
         _navigateAndDisplaySelection(context);
       },
@@ -417,7 +443,8 @@ class SelectionScreen extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
+              child: FlatButton(
+                color: Colors.brown,
                 onPressed: () {
                   // Close the screen and return "Yep!" as the result.
                   Navigator.pop(context, 'Yep!');
@@ -427,7 +454,8 @@ class SelectionScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
+              child: FlatButton(
+                color: Colors.brown,
                 onPressed: () {
                   // Close the screen and return "Nope!" as the result.
                   Navigator.pop(context, 'Nope.');
@@ -442,7 +470,12 @@ class SelectionScreen extends StatelessWidget {
   }
 }
 
+
 ```
+
+***Kết quả: ****
+
+![alt](/picture/B5.png)
 
 ## Send data to a new screen
 
@@ -458,7 +491,7 @@ class Todo {
   Todo(this.title, this.description);
 }
 
-void main() {
+void sendData() {
   runApp(MaterialApp(
     title: 'Passing Data',
     home: TodosScreen(
@@ -496,12 +529,7 @@ class TodosScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(),
-                  // Pass the arguments as part of the RouteSettings. The
-                  // DetailScreen reads the arguments from these settings.
-                  settings: RouteSettings(
-                    arguments: todos[index],
-                  ),
+                  builder: (context) => DetailScreen(todo: todos[index]),
                 ),
               );
             },
@@ -513,10 +541,14 @@ class TodosScreen extends StatelessWidget {
 }
 
 class DetailScreen extends StatelessWidget {
+  // Declare a field that holds the Todo.
+  final Todo todo;
+
+  // In the constructor, require a Todo.
+  DetailScreen({Key key, @required this.todo}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final Todo todo = ModalRoute.of(context).settings.arguments;
-
     // Use the Todo to create the UI.
     return Scaffold(
       appBar: AppBar(
@@ -530,7 +562,12 @@ class DetailScreen extends StatelessWidget {
   }
 }
 
+
 ```
+
+***Kết quả: ****
+
+![alt](/picture/B6.png)
 
 This project is a starting point for a Flutter application.
 
