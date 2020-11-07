@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void navigateNew() {
   runApp(MaterialApp(
     title: 'Navigation Basics',
     home: FirstRoute(),
@@ -15,7 +15,7 @@ class FirstRoute extends StatelessWidget {
         title: Text('First Route'),
       ),
       body: Center(
-        child: ElevatedButton(
+        child: FlatButton(
           child: Text('Open route'),
           onPressed: () {
             Navigator.push(
@@ -37,7 +37,7 @@ class SecondRoute extends StatelessWidget {
         title: Text("Second Route"),
       ),
       body: Center(
-        child: ElevatedButton(
+        child: FlatButton(
           onPressed: () {
             Navigator.pop(context);
           },
