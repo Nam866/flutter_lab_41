@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void navigateNamed() {
   runApp(MaterialApp(
     title: 'Named Routes Demo',
     // Start the app with the "/" named route. In this case, the app starts
