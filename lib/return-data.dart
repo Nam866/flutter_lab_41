@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void returnData() {
   runApp(MaterialApp(
     title: 'Returning Data',
     home: HomeScreen(),
